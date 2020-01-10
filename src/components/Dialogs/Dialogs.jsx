@@ -31,23 +31,22 @@ const Dialogs = () => {
         {id: 8, name: 'Vasya'}
     ]
 
-    let dialogsArray = dialogsData.map( dialog => (<DialogItem name={dialog.name} id={dialog.id} />))
-
     let messagesData = [
         {id: 1, message: 'Hi'},
         {id: 2, message: 'How are you?'},
         {id: 3, message: 'Super!'}
     ]
 
-    let MessagesArray = messagesData.map( el => (<Message message={el.message} />))
+    let dialogsElements = dialogsData.map( dialog => <DialogItem name={dialog.name} id={dialog.id} />);
+    let messagesElements = messagesData.map( el => <Message message={el.message} />);
 
     return (
         <div className={s.dialogs}>
             <div className={s.dialogsItems}>
-                {dialogsArray}
+                { dialogsElements }
             </div>
             <div className={s.messages}>
-                {MessagesArray}
+                { messagesElements }
             </div>
         </div>
     )
