@@ -12,3 +12,14 @@
 .item a.activeLink {
     color: blueviolet;
 }
+
+.myFriends {
+    text-align: center;
+    padding: 10px 0;
+}
+
+.friendsTitle {
+    color: bisque;
+    font-weight: bold;
+    margin: 0 0 5px;
+}

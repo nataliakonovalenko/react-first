@@ -23,7 +23,13 @@ let store = {
                 {id: 2, message: 'How are you?'},
                 {id: 3, message: 'Super!'}
             ]
-        }
+        },
+        navbar: {
+            friends: [
+                {id: 1, name: 'Paul', lastName: 'Smith'},
+                {id: 2, name: 'Julia', lastName: 'Green' }
+            ],
+        },
     },
     _callSubscriber() {
         console.log('state was changed');
