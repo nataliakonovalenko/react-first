@@ -1,24 +1,26 @@
 import React from 'react';
 import s from './Users.module.css';
+import * as axios from 'axios';
+import userPhoto from '../../assets/user-image.png';
 
 const Users = (props) => {
-    if(props.users.length === 0) {
-        props.setUsers([
-            {id: 1, photoUrl: 'https://media-exp1.licdn.com/dms/image/C4E03AQE3woC4J8bqYQ/profile-displayphoto-shrink_200_200/0?e=1585180800&v=beta&t=VLUj-SWSIuhKmwBces23qnIji2RHNA7Ve8FLtbXugTo', followed: false, name: 'Paul', status: 'I am so pretty', location: { city: 'Kharkiv', country: 'Ukraine'}},
-            {id: 2, photoUrl: 'https://media-exp1.licdn.com/dms/image/C4E03AQE3woC4J8bqYQ/profile-displayphoto-shrink_200_200/0?e=1585180800&v=beta&t=VLUj-SWSIuhKmwBces23qnIji2RHNA7Ve8FLtbXugTo', followed: false, name: 'Svetlana', status: 'I am looking for a new dress', location: {city: 'Kiev', country: 'Ukraine'}},
-            {id: 3, photoUrl: 'https://media-exp1.licdn.com/dms/image/C4E03AQE3woC4J8bqYQ/profile-displayphoto-shrink_200_200/0?e=1585180800&v=beta&t=VLUj-SWSIuhKmwBces23qnIji2RHNA7Ve8FLtbXugTo', followed: true, name: 'Sergei', status: 'I like football!!', location: {city: 'Minsk', country: 'Belarus'}},
-            {id: 4, photoUrl: 'https://media-exp1.licdn.com/dms/image/C4E03AQE3woC4J8bqYQ/profile-displayphoto-shrink_200_200/0?e=1585180800&v=beta&t=VLUj-SWSIuhKmwBces23qnIji2RHNA7Ve8FLtbXugTo', followed: true, name: 'Mary', status: 'I am happy!', location: {city: 'Paris', country: 'France'}}
-        ])
-    }
+    let getUsers = () => {
+        if(props.users.length === 0) {
+            axios.get('https://social-network.samuraijs.com/api/1.0/users').then(response => {
+                props.setUsers(response.data.items);
+            });
+        }
+    };
 
     return(
         <div>
+            <button onClick={getUsers}>Get Users</button>
             {props.users.map(user => {
                 return(
                     <div key={user.id}>
                         <span>
                             <div>
-                                <img className={s.userPhoto} src={user.photoUrl} />
+                                <img className={s.userPhoto} src={user.photos.small !== null ? user.photos.small : userPhoto} />
                                 <br/>
                                 {user.followed
                                     ? <button onClick={ () => {props.unfollowUser(user.id)}}>Unfollow</button>
@@ -31,8 +33,8 @@ const Users = (props) => {
                                 <div>{user.status}</div>
                             </span>
                             <span>
-                                <div>{user.location.country}</div>
-                                <div>{user.location.city}</div>
+                                <div>{'user.location.country'}</div>
+                                <div>{'user.location.city'}</div>
                             </span>
                         </span>
                     </div>
