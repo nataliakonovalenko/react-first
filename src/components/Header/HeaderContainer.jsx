@@ -18,13 +18,20 @@ class HeaderContainer extends React.Component {
                     let {id, login, email} = response.data.data;
                     this.props.setAuthUserData(id, login, email);
                 }
-            });
+            }).then(() => {
+                axios.get(`https://social-network.samuraijs.com/api/1.0/profile/${this.props.userId}`, {
+                    withCredentials: true
+                })
+                    .then(response => {
+                        console.log('test');
+                })
+        })
     }
 
     render() {
         return (
             <>
-                {!this.props.isFetching ? <Preloader /> : null}
+                {this.props.isFetching ? <Preloader /> : null}
                 <Header {...this.props}/>
             </>
         )
@@ -33,6 +40,7 @@ class HeaderContainer extends React.Component {
 
 let mapStateToProps = (state) => ({
     login: state.auth.login,
+    userId: state.auth.userId,
     isAuth: state.auth.isAuth,
     isFetching: state.auth.isFetching
 });
