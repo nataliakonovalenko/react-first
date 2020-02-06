@@ -1,19 +1,20 @@
 import React from "react";
 import * as axios from "axios";
 import Header from "./Header";
-import {setAuthUserData, toggleFetching} from "../../redux/auth-reducer";
+import {setAuthUserData, setProfileUserData, toggleFetching} from "../../redux/auth-reducer";
 import {connect} from "react-redux";
 import Preloader from "../Preloader/Preloader";
+import userPhoto from "../../assets/images/userPhoto.jpeg";
 
 class HeaderContainer extends React.Component {
 
     componentDidMount() {
-        this.props.toggleFetching(false);
+        this.props.toggleFetching(true);
         axios.get(`https://social-network.samuraijs.com/api/1.0/auth/me`, {
             withCredentials: true
         })
             .then(response => {
-                this.props.toggleFetching(true);
+                this.props.toggleFetching(false);
                 if(response.data.resultCode === 0) {
                     let {id, login, email} = response.data.data;
                     this.props.setAuthUserData(id, login, email);
@@ -23,7 +24,9 @@ class HeaderContainer extends React.Component {
                     withCredentials: true
                 })
                     .then(response => {
-                        console.log('test');
+                        let userSmallPhoto = response.data.photos.small;
+                        userSmallPhoto = userPhoto;
+                        this.props.setProfileUserData(userSmallPhoto);
                 })
         })
     }
@@ -42,7 +45,8 @@ let mapStateToProps = (state) => ({
     login: state.auth.login,
     userId: state.auth.userId,
     isAuth: state.auth.isAuth,
-    isFetching: state.auth.isFetching
+    isFetching: state.auth.isFetching,
+    userSmallPhoto: state.auth.userSmallPhoto
 });
 
-export default connect(mapStateToProps, {setAuthUserData, toggleFetching})(HeaderContainer);
+export default connect(mapStateToProps, {setAuthUserData, toggleFetching, setProfileUserData})(HeaderContainer);

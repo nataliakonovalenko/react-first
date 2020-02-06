@@ -1,12 +1,14 @@
 const SET_USER_DATA = 'SET_USER_DATA';
 const TOGGLE_IS_FETCHING = 'TOGGLE_IS_FETCHING';
+const SET_PROFILE_USER_DATA = 'SET_PROFILE_USER_DATA';
 
 let initialState = {
     userId: null,
     email: null,
     login: null,
     isFetching: false,
-    isAuth: false
+    isAuth: false,
+    userSmallPhoto: null
 };
 
 const authReducer = (state = initialState, action) => {
@@ -22,6 +24,11 @@ const authReducer = (state = initialState, action) => {
                 ...state,
                 isFetching: action.isFetching
             };
+        case SET_PROFILE_USER_DATA:
+            return {
+                ...state,
+                userSmallPhoto: action.userSmallPhoto
+            };
         default:
             return state;
     }
@@ -29,5 +36,6 @@ const authReducer = (state = initialState, action) => {
 
 export const setAuthUserData = (userId, login, email) => ({type: SET_USER_DATA, data: {userId, login, email}})
 export const toggleFetching = (isFetching) => ({type: TOGGLE_IS_FETCHING, isFetching})
+export const setProfileUserData = (userSmallPhoto) => ({type: SET_PROFILE_USER_DATA, userSmallPhoto})
 
 export default authReducer;
