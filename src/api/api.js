@@ -22,17 +22,19 @@ export const usersAPI = {
             .then(response => response.data);
     },
     getProfileInfo(userId) {
-        return instance.get(`/profile/${userId}`)
-            .then(response => response.data);
-    },
+        return instance.get(`/profile/${userId}`);
+    }
+}
+
+export const authAPI ={
     authMe() {
         return instance.get(`auth/me`)
             .then(response => response.data);
-    },
-    setAuthMeInfo(userId) {
-        return instance.get(`profile/${userId}`)
-            .then(response => response.data);
     }
+    // setAuthMeInfo(userId) {
+    //     return instance.get(`profile/${userId}`)
+    //         .then(response => response.data);
+    // }
 }
 
 
