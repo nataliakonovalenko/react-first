@@ -11,7 +11,7 @@ class ProfileContainer extends React.Component {
     componentDidMount() {
         let userId = this.props.match.params.userId;
         if(!userId) {
-            userId = 2;
+            userId = 5852;
         }
         this.props.gerUserProfile(userId);
     }
@@ -29,6 +29,6 @@ let mapStateToProps = (state) => ({
 
 export default compose(
     connect(mapStateToProps, {gerUserProfile}),
-    withRouter,
-    withAuthRedirect
+    withRouter
+    //withAuthRedirect
 )(ProfileContainer);
