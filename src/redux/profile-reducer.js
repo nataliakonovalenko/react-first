@@ -12,7 +12,7 @@ let initialState = {
     ],
     newPostText: 'Textarea value',
     profile: null,
-    status: 'lalala'
+    status: ''
 };
 
 const profileReducer = (state = initialState, action) => {
