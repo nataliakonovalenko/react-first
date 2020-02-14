@@ -2,6 +2,7 @@ import React from 'react';
 import s from './ProfileInfo.module.css';
 import Preloader from "../../Preloader/Preloader";
 import ProfileStatus from "./ProfileStatus";
+import {updateStatus} from "../../../redux/profile-reducer";
 
 const ProfileInfo  = (props) => {
     if (!props.profile) {
@@ -12,7 +13,7 @@ const ProfileInfo  = (props) => {
         <div>
             <div className={s.descriptonBlock}>
                 <img src={props.profile.photos.large} alt=""/>
-                <ProfileStatus status="Hello my friend" />
+                <ProfileStatus status={props.status} updateStatus={props.updateStatus}/>
                 {/*<div>Name: {props.profile.fullName}</div>
                 <div>About: {props.profile.aboutMe}</div>
                 <div>Looking for a job: {props.profile.lookingForAJob === true ? 'Yes' : 'No'}</div>
