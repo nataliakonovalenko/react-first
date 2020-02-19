@@ -5,7 +5,7 @@ const PostForm = (props) => {
     return(
         <form onSubmit={props.handleSubmit}>
             <div>
-                <Field component={"textarea"} name={"newPostText"}/>
+                <Field component="textarea" name="newPostText" placeholder="New post text"/>
             </div>
             <div>
                 <button>Add post</button>
@@ -14,8 +14,8 @@ const PostForm = (props) => {
     )
 }
 
-const PostReduxForm = reduxForm({
-    form: 'newPostForm'
+const ProfilePostReduxForm = reduxForm({
+    form: 'addNewPostForm'
 })(PostForm)
 
-export default PostReduxForm;
+export default ProfilePostReduxForm;
