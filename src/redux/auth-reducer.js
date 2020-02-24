@@ -4,6 +4,7 @@ import {authAPI} from "../api/api";
 const SET_USER_DATA = 'SET_USER_DATA';
 const TOGGLE_IS_FETCHING = 'TOGGLE_IS_FETCHING';
 const SET_PROFILE_USER_DATA = 'SET_PROFILE_USER_DATA';
+const SET_CAPTCHA = 'SET_CAPTCHA';
 
 let initialState = {
     userId: null,
@@ -11,7 +12,8 @@ let initialState = {
     login: null,
     isFetching: false,
     isAuth: false,
-    userSmallPhoto: null
+    userSmallPhoto: null,
+    captcha: false
 };
 
 const authReducer = (state = initialState, action) => {
@@ -31,12 +33,18 @@ const authReducer = (state = initialState, action) => {
                 ...state,
                 userSmallPhoto: action.userSmallPhoto
             };
+        case SET_CAPTCHA:
+            return {
+                ...state,
+                captcha: action.captcha
+            };
         default:
             return state;
     }
 }
 
 export const setAuthUserData = (userId, login, email, isAuth) => ({type: SET_USER_DATA, payload: {userId, login, email, isAuth}})
+export const setCaptcha = (captcha) => ({type: SET_CAPTCHA, captcha})
 export const toggleFetching = (isFetching) => ({type: TOGGLE_IS_FETCHING, isFetching})
 export const setProfileUserData = (userSmallPhoto) => ({type: SET_PROFILE_USER_DATA, userSmallPhoto})
 
@@ -61,13 +69,16 @@ export const getAuthUserData = () => {
     }
 }
 
-export const login = (email, password, rememberMe) => {
+export const login = (email, password, rememberMe, captcha) => {
     return (dispatch) => {
 
-        authAPI.login(email, password, rememberMe)
+        authAPI.login(email, password, rememberMe, captcha)
             .then(response => {
                 if(response.data.resultCode === 0) {
                     dispatch(getAuthUserData());
+                }
+                if(response.data.resultCode === 10) {
+                    dispatch(setCaptcha(true));
                 }
             })
     }

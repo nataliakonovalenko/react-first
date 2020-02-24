@@ -5,12 +5,14 @@ import {maxLengthCreator, required} from "../../utils/validators/validators";
 import {connect} from "react-redux";
 import {login} from "../../redux/auth-reducer";
 import {Redirect} from "react-router-dom";
+import Preloader from "../Preloader/Preloader";
 
 const maxLength30 = maxLengthCreator(30);
 
 const Login = (props) => {
+
     const onSubmit = (formData) => {
-        props.login(formData.email, formData.password, formData.rememberMe);
+        props.login(formData.email, formData.password, formData.rememberMe, formData.captcha);
     }
 
     if (props.isAuth) {
@@ -21,6 +23,7 @@ const Login = (props) => {
         <>
             <h1>Login</h1>
             <LoginReduxForm onSubmit={onSubmit} />
+            {props.captcha ? <div>captcha</div> : null}
         </>
     )
 }
@@ -60,7 +63,8 @@ const LoginReduxForm = reduxForm({
 })(LoginForm)
 
 let mapStateToProps = (state) => ({
-    isAuth: state.auth.isAuth
+    isAuth: state.auth.isAuth,
+    captcha: state.auth.captcha
 });
 
 export default connect(mapStateToProps, {login}) (Login);
