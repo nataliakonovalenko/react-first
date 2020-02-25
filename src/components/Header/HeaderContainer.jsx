@@ -1,16 +1,12 @@
 import React from "react";
 import Header from "./Header";
-import {getAuthUserData, logout} from "../../redux/auth-reducer";
+import {logout} from "../../redux/auth-reducer";
 import {connect} from "react-redux";
 import Preloader from "../Preloader/Preloader";
 //import userPhoto from "../../assets/images/userPhoto.jpeg";
 
 
 class HeaderContainer extends React.Component {
-
-    componentDidMount() {
-        this.props.getAuthUserData();
-    }
 
     render() {
         return (
@@ -30,4 +26,4 @@ let mapStateToProps = (state) => ({
     userSmallPhoto: state.auth.userSmallPhoto
 });
 
-export default connect(mapStateToProps, {getAuthUserData, logout})(HeaderContainer);
+export default connect(mapStateToProps, {logout})(HeaderContainer);

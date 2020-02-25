@@ -53,7 +53,7 @@ export const getAuthUserData = () => {
     return (dispatch) => {
 
         dispatch(toggleFetching(true));
-        authAPI.authMe().then(data => {
+        return authAPI.authMe().then(data => {
             dispatch(toggleFetching(false));
             if(data.resultCode === 0) {
                 let {id, login, email} = data.data;
