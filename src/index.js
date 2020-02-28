@@ -8,6 +8,10 @@ import App from './App';
 import {BrowserRouter} from "react-router-dom";
 import {Provider} from "react-redux";
 
+setInterval(() => {
+    store.dispatch({type: "FAKE"})
+}, 2000)
+
 ReactDOM.render(
     <BrowserRouter>
         <Provider store={store}>
