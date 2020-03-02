@@ -2,7 +2,7 @@ import {authAPI} from "../api/api";
 import {stopSubmit} from "redux-form";
 //import userPhoto from "../assets/images/userPhoto.jpeg";
 
-const SET_USER_DATA = 'SET_USER_DATA';
+const SET_USER_DATA = 'network/auth/SET_USER_DATA';
 const TOGGLE_IS_FETCHING = 'TOGGLE_IS_FETCHING';
 const SET_PROFILE_USER_DATA = 'SET_PROFILE_USER_DATA';
 const SET_CAPTCHA = 'SET_CAPTCHA';
@@ -49,54 +49,44 @@ export const setCaptcha = (captcha) => ({type: SET_CAPTCHA, captcha})
 export const toggleFetching = (isFetching) => ({type: TOGGLE_IS_FETCHING, isFetching})
 export const setProfileUserData = (userSmallPhoto) => ({type: SET_PROFILE_USER_DATA, userSmallPhoto})
 
-export const getAuthUserData = () => {
-    return (dispatch) => {
+export const getAuthUserData = () => async (dispatch) => {
+    dispatch(toggleFetching(true));
 
-        dispatch(toggleFetching(true));
-        return authAPI.authMe().then(data => {
-            dispatch(toggleFetching(false));
-            if(data.resultCode === 0) {
-                let {id, login, email} = data.data;
-                dispatch(setAuthUserData(id, login, email,true));
-            }
-        })
-        //     .then(() => {
-        //     usersAPI.setAuthMeInfo(this.props.userId).then(data => {
-        //         let userSmallPhoto = data.photos.small;
-        //         userSmallPhoto = userPhoto;
-        //         this.props.setProfileUserData(userSmallPhoto);
-        //     })
-        // })
+    let response =  await authAPI.authMe();
+
+    if(response.data.resultCode === 0) {
+        let {id, login, email} = response.data.data;
+        dispatch(setAuthUserData(id, login, email,true));
+    }
+    dispatch(toggleFetching(false));
+    //     .then(() => {
+    //     usersAPI.setAuthMeInfo(this.props.userId).then(data => {
+    //         let userSmallPhoto = data.photos.small;
+    //         userSmallPhoto = userPhoto;
+    //         this.props.setProfileUserData(userSmallPhoto);
+    //     })
+    // })
+}
+
+export const login = (email, password, rememberMe, captcha) => async (dispatch) => {
+    let response = await authAPI.login(email, password, rememberMe, captcha);
+
+    if(response.data.resultCode === 0) {
+        dispatch(getAuthUserData());
+    } else if(response.data.resultCode === 10) {
+        dispatch(setCaptcha(true));
+    } else {
+        let message = response.data.messages.length > 0 ? response.data.messages[0] : 'Some error';
+        dispatch(stopSubmit('login', {_error: message}));
     }
 }
 
-export const login = (email, password, rememberMe, captcha) => {
-    return (dispatch) => {
+export const logout = (email, password, rememberMe) => async (dispatch) => {
+        let response = await authAPI.logout();
 
-        authAPI.login(email, password, rememberMe, captcha)
-            .then(response => {
-                if(response.data.resultCode === 0) {
-                    dispatch(getAuthUserData());
-                } else if(response.data.resultCode === 10) {
-                    dispatch(setCaptcha(true));
-                } else {
-                    let message = response.data.messages.length > 0 ? response.data.messages[0] : 'Some error';
-                    dispatch(stopSubmit('login', {_error: message}));
-                }
-            })
-    }
-}
-
-export const logout = (email, password, rememberMe) => {
-    return (dispatch) => {
-
-        authAPI.logout()
-            .then(response => {
-                if(response.data.resultCode === 0) {
-                    dispatch(setAuthUserData(null, null, null,false));
-                }
-            })
-    }
+        if(response.data.resultCode === 0) {
+            dispatch(setAuthUserData(null, null, null,false));
+        }
 }
 
 export default authReducer;

@@ -30,7 +30,6 @@ class ProfileContainer extends React.Component {
 }
 
 let mapStateToProps = (state) => {
-    //console.log('mapStateToProp s');
     return {
         profile: state.profilePage.profile,
         status: state.profilePage.status,

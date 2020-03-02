@@ -2,7 +2,7 @@ import React from "react";
 import Header from "./Header";
 import {logout} from "../../redux/auth-reducer";
 import {connect} from "react-redux";
-import Preloader from "../Preloader/Preloader";
+import Preloader from "../common/Preloader/Preloader";
 //import userPhoto from "../../assets/images/userPhoto.jpeg";
 
 
