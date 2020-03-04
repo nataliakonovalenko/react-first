@@ -1,30 +1,30 @@
 {
   "files": {
-    "main.css": "/demo-react-sn/static/css/main.ff2d28fd.chunk.css",
-    "main.js": "/demo-react-sn/static/js/main.ce03a5e1.chunk.js",
-    "main.js.map": "/demo-react-sn/static/js/main.ce03a5e1.chunk.js.map",
-    "runtime-main.js": "/demo-react-sn/static/js/runtime-main.f2d53c0c.js",
-    "runtime-main.js.map": "/demo-react-sn/static/js/runtime-main.f2d53c0c.js.map",
-    "static/js/2.9687f359.chunk.js": "/demo-react-sn/static/js/2.9687f359.chunk.js",
-    "static/js/2.9687f359.chunk.js.map": "/demo-react-sn/static/js/2.9687f359.chunk.js.map",
-    "static/css/3.1acf04a4.chunk.css": "/demo-react-sn/static/css/3.1acf04a4.chunk.css",
-    "static/js/3.4ec359f0.chunk.js": "/demo-react-sn/static/js/3.4ec359f0.chunk.js",
-    "static/js/3.4ec359f0.chunk.js.map": "/demo-react-sn/static/js/3.4ec359f0.chunk.js.map",
-    "static/css/4.771f4a19.chunk.css": "/demo-react-sn/static/css/4.771f4a19.chunk.css",
-    "static/js/4.86738494.chunk.js": "/demo-react-sn/static/js/4.86738494.chunk.js",
-    "static/js/4.86738494.chunk.js.map": "/demo-react-sn/static/js/4.86738494.chunk.js.map",
-    "index.html": "/demo-react-sn/index.html",
-    "precache-manifest.4835f7da5af61a623b7c3c6bbd4a1cc4.js": "/demo-react-sn/precache-manifest.4835f7da5af61a623b7c3c6bbd4a1cc4.js",
-    "service-worker.js": "/demo-react-sn/service-worker.js",
-    "static/css/3.1acf04a4.chunk.css.map": "/demo-react-sn/static/css/3.1acf04a4.chunk.css.map",
-    "static/css/4.771f4a19.chunk.css.map": "/demo-react-sn/static/css/4.771f4a19.chunk.css.map",
-    "static/css/main.ff2d28fd.chunk.css.map": "/demo-react-sn/static/css/main.ff2d28fd.chunk.css.map",
-    "static/media/preloader.svg": "/demo-react-sn/static/media/preloader.16d14331.svg"
+    "main.css": "/nataliakonovalenko/react-first/static/css/main.ff2d28fd.chunk.css",
+    "main.js": "/nataliakonovalenko/react-first/static/js/main.ca0d1ce9.chunk.js",
+    "main.js.map": "/nataliakonovalenko/react-first/static/js/main.ca0d1ce9.chunk.js.map",
+    "runtime-main.js": "/nataliakonovalenko/react-first/static/js/runtime-main.2cc672c3.js",
+    "runtime-main.js.map": "/nataliakonovalenko/react-first/static/js/runtime-main.2cc672c3.js.map",
+    "static/js/2.9687f359.chunk.js": "/nataliakonovalenko/react-first/static/js/2.9687f359.chunk.js",
+    "static/js/2.9687f359.chunk.js.map": "/nataliakonovalenko/react-first/static/js/2.9687f359.chunk.js.map",
+    "static/css/3.1acf04a4.chunk.css": "/nataliakonovalenko/react-first/static/css/3.1acf04a4.chunk.css",
+    "static/js/3.4ec359f0.chunk.js": "/nataliakonovalenko/react-first/static/js/3.4ec359f0.chunk.js",
+    "static/js/3.4ec359f0.chunk.js.map": "/nataliakonovalenko/react-first/static/js/3.4ec359f0.chunk.js.map",
+    "static/css/4.771f4a19.chunk.css": "/nataliakonovalenko/react-first/static/css/4.771f4a19.chunk.css",
+    "static/js/4.86738494.chunk.js": "/nataliakonovalenko/react-first/static/js/4.86738494.chunk.js",
+    "static/js/4.86738494.chunk.js.map": "/nataliakonovalenko/react-first/static/js/4.86738494.chunk.js.map",
+    "index.html": "/nataliakonovalenko/react-first/index.html",
+    "precache-manifest.7b3acf0c2c03e5e427abe67f83a59bb1.js": "/nataliakonovalenko/react-first/precache-manifest.7b3acf0c2c03e5e427abe67f83a59bb1.js",
+    "service-worker.js": "/nataliakonovalenko/react-first/service-worker.js",
+    "static/css/3.1acf04a4.chunk.css.map": "/nataliakonovalenko/react-first/static/css/3.1acf04a4.chunk.css.map",
+    "static/css/4.771f4a19.chunk.css.map": "/nataliakonovalenko/react-first/static/css/4.771f4a19.chunk.css.map",
+    "static/css/main.ff2d28fd.chunk.css.map": "/nataliakonovalenko/react-first/static/css/main.ff2d28fd.chunk.css.map",
+    "static/media/preloader.svg": "/nataliakonovalenko/react-first/static/media/preloader.16d14331.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.f2d53c0c.js",
+    "static/js/runtime-main.2cc672c3.js",
     "static/js/2.9687f359.chunk.js",
     "static/css/main.ff2d28fd.chunk.css",
-    "static/js/main.ce03a5e1.chunk.js"
+    "static/js/main.ca0d1ce9.chunk.js"
   ]
 }
