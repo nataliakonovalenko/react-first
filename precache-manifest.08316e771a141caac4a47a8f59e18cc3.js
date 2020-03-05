@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "f09fc98baec5a5d15b60c27b2404326c",
+    "revision": "0cf4e041b428432a4cdd86571128889a",
     "url": "/nataliakonovalenko/react-first/index.html"
   },
   {
@@ -8,32 +8,32 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/nataliakonovalenko/react-first/static/css/3.1acf04a4.chunk.css"
   },
   {
-    "revision": "269cb15eaed384fa6024",
+    "revision": "37ac58464136f385f3d1",
     "url": "/nataliakonovalenko/react-first/static/css/4.771f4a19.chunk.css"
   },
   {
-    "revision": "96bdde08787fab98f30e",
+    "revision": "010b0f623ceaac23ccaa",
     "url": "/nataliakonovalenko/react-first/static/css/main.ff2d28fd.chunk.css"
   },
   {
-    "revision": "3792bb3768e98e7c2944",
-    "url": "/nataliakonovalenko/react-first/static/js/2.9687f359.chunk.js"
+    "revision": "19bc714e517bddbb8568",
+    "url": "/nataliakonovalenko/react-first/static/js/2.3ef58f07.chunk.js"
   },
   {
     "revision": "183615b2b1d5df006f63",
     "url": "/nataliakonovalenko/react-first/static/js/3.4ec359f0.chunk.js"
   },
   {
-    "revision": "269cb15eaed384fa6024",
-    "url": "/nataliakonovalenko/react-first/static/js/4.86738494.chunk.js"
+    "revision": "37ac58464136f385f3d1",
+    "url": "/nataliakonovalenko/react-first/static/js/4.66390dcc.chunk.js"
   },
   {
-    "revision": "96bdde08787fab98f30e",
-    "url": "/nataliakonovalenko/react-first/static/js/main.ca0d1ce9.chunk.js"
+    "revision": "010b0f623ceaac23ccaa",
+    "url": "/nataliakonovalenko/react-first/static/js/main.8b9f2d32.chunk.js"
   },
   {
-    "revision": "b9091ed0757e3c428f8f",
-    "url": "/nataliakonovalenko/react-first/static/js/runtime-main.2cc672c3.js"
+    "revision": "8a2a60e2e84ce10fe4ef",
+    "url": "/nataliakonovalenko/react-first/static/js/runtime-main.dcca3d74.js"
   },
   {
     "revision": "16d14331e2d5c98dd54c026d8609a13a",

@@ -1,20 +1,20 @@
 {
   "files": {
     "main.css": "/nataliakonovalenko/react-first/static/css/main.ff2d28fd.chunk.css",
-    "main.js": "/nataliakonovalenko/react-first/static/js/main.ca0d1ce9.chunk.js",
-    "main.js.map": "/nataliakonovalenko/react-first/static/js/main.ca0d1ce9.chunk.js.map",
-    "runtime-main.js": "/nataliakonovalenko/react-first/static/js/runtime-main.2cc672c3.js",
-    "runtime-main.js.map": "/nataliakonovalenko/react-first/static/js/runtime-main.2cc672c3.js.map",
-    "static/js/2.9687f359.chunk.js": "/nataliakonovalenko/react-first/static/js/2.9687f359.chunk.js",
-    "static/js/2.9687f359.chunk.js.map": "/nataliakonovalenko/react-first/static/js/2.9687f359.chunk.js.map",
+    "main.js": "/nataliakonovalenko/react-first/static/js/main.8b9f2d32.chunk.js",
+    "main.js.map": "/nataliakonovalenko/react-first/static/js/main.8b9f2d32.chunk.js.map",
+    "runtime-main.js": "/nataliakonovalenko/react-first/static/js/runtime-main.dcca3d74.js",
+    "runtime-main.js.map": "/nataliakonovalenko/react-first/static/js/runtime-main.dcca3d74.js.map",
+    "static/js/2.3ef58f07.chunk.js": "/nataliakonovalenko/react-first/static/js/2.3ef58f07.chunk.js",
+    "static/js/2.3ef58f07.chunk.js.map": "/nataliakonovalenko/react-first/static/js/2.3ef58f07.chunk.js.map",
     "static/css/3.1acf04a4.chunk.css": "/nataliakonovalenko/react-first/static/css/3.1acf04a4.chunk.css",
     "static/js/3.4ec359f0.chunk.js": "/nataliakonovalenko/react-first/static/js/3.4ec359f0.chunk.js",
     "static/js/3.4ec359f0.chunk.js.map": "/nataliakonovalenko/react-first/static/js/3.4ec359f0.chunk.js.map",
     "static/css/4.771f4a19.chunk.css": "/nataliakonovalenko/react-first/static/css/4.771f4a19.chunk.css",
-    "static/js/4.86738494.chunk.js": "/nataliakonovalenko/react-first/static/js/4.86738494.chunk.js",
-    "static/js/4.86738494.chunk.js.map": "/nataliakonovalenko/react-first/static/js/4.86738494.chunk.js.map",
+    "static/js/4.66390dcc.chunk.js": "/nataliakonovalenko/react-first/static/js/4.66390dcc.chunk.js",
+    "static/js/4.66390dcc.chunk.js.map": "/nataliakonovalenko/react-first/static/js/4.66390dcc.chunk.js.map",
     "index.html": "/nataliakonovalenko/react-first/index.html",
-    "precache-manifest.7b3acf0c2c03e5e427abe67f83a59bb1.js": "/nataliakonovalenko/react-first/precache-manifest.7b3acf0c2c03e5e427abe67f83a59bb1.js",
+    "precache-manifest.08316e771a141caac4a47a8f59e18cc3.js": "/nataliakonovalenko/react-first/precache-manifest.08316e771a141caac4a47a8f59e18cc3.js",
     "service-worker.js": "/nataliakonovalenko/react-first/service-worker.js",
     "static/css/3.1acf04a4.chunk.css.map": "/nataliakonovalenko/react-first/static/css/3.1acf04a4.chunk.css.map",
     "static/css/4.771f4a19.chunk.css.map": "/nataliakonovalenko/react-first/static/css/4.771f4a19.chunk.css.map",
@@ -22,9 +22,9 @@
     "static/media/preloader.svg": "/nataliakonovalenko/react-first/static/media/preloader.16d14331.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.2cc672c3.js",
-    "static/js/2.9687f359.chunk.js",
+    "static/js/runtime-main.dcca3d74.js",
+    "static/js/2.3ef58f07.chunk.js",
     "static/css/main.ff2d28fd.chunk.css",
-    "static/js/main.ca0d1ce9.chunk.js"
+    "static/js/main.8b9f2d32.chunk.js"
   ]
 }
